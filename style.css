@@ -1,0 +1,106 @@
+ 
+:root{
+    --bg-color: #001122;
+    --primary-color: #155e75;
+    --border-radius: 8px;
+    --text-color: #fff;
+    --bordr-color: #7fb7c9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif ;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: var(--bg-color);
+}
+
+.box{
+    padding: 2rem;
+    width: 25rem;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+}
+.qr-header h1{
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1.1rem;
+    text-transform: uppercase;
+}
+
+.qr-header input{
+    width: 100%;
+    margin-block: 12px;  /* for margin top and bottom both, for margin left and right we use margin-inline */
+
+}
+
+.qr-header input, select{
+     padding: 8px;
+     border-radius: var(--border-radius);
+     font-size: 1rem;
+     outline: none;
+     border: 2px solid var(--bordr-color);
+}
+
+.qr-header label{
+     color: var(--text-color);
+     font-size: 20px;
+
+}
+
+.qr-header div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.qr-footer{
+    /* margin-top: 2rem; */
+    display: flex;
+    justify-content: center;
+}
+.qr-footer a{
+    background-color: var(--text-color);
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 14px 36px;  /* here 14px goes for top-bottom and 36 px goes for left and right*/
+    margin-inline: 0.5rem;
+    font-weight: 600;
+
+}
+
+.qr-body{
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.qr-body img{
+   max-width: 100%; 
+   max-height: 100%;
+   padding: 10px;
+   border-radius: var(--border-radius);
+   border: 1px solid var(--bordr-color);
+}
+
+@media screen and (max-width: 420px){
+    .box{
+        max-width: 90%;
+    }
+    .qr-footer a{
+         padding: 10px 30px;
+         font-size: 1.2rem;
+         margin-inline: 0.2rem;
+        
+    }
+}
