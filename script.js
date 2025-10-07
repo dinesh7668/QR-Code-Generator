@@ -45,6 +45,12 @@ downloadBtn.addEventListener("click", (e) => {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+    // Mobile browser fallback
+    setTimeout(() => {
+      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        alert("On some smartphones, automatic download may not work. Please long-press the QR code image and select 'Download' or 'Save Image'.");
+      }
+    }, 500);
   } else {
     alert("Please generate a QR code first.");
   }
