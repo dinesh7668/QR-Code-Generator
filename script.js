@@ -31,8 +31,14 @@ function generateQRCode() {
 downloadBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let img = qrContainer.querySelector("img");
+  let canvas = qrContainer.querySelector("canvas");
+  let imgSrc = null;
   if (img) {
-    let imgSrc = img.src;
+    imgSrc = img.src;
+  } else if (canvas) {
+    imgSrc = canvas.toDataURL("image/png");
+  }
+  if (imgSrc) {
     let a = document.createElement("a");
     a.href = imgSrc;
     a.download = "QR_Code_By_Dinesh.png";
