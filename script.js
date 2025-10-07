@@ -65,6 +65,7 @@ downloadBtn.addEventListener("click", (e) => {
     a.click();
     document.body.removeChild(a);
   } else {
-    alert("Please generate a QR code first.");
+    alert("QR code might not generated yet, or QR code download may not work on mobile devices. Please use a PC for automatic download, or long-press the QR code image and select 'Download' or 'Save Image'. you can also capture it as a screenshot");
   }
 });
+
