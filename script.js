@@ -30,6 +30,12 @@ function generateQRCode() {
 
 downloadBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  // Device detection
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (isMobile) {
+    alert("QR code download may not work on mobile devices. Please use a PC for automatic download, or long-press the QR code image and select 'Download' or 'Save Image'.");
+    return;
+  }
   let img = qrContainer.querySelector("img");
   let canvas = qrContainer.querySelector("canvas");
   let imgSrc = null;
@@ -45,12 +51,6 @@ downloadBtn.addEventListener("click", (e) => {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    // Mobile browser fallback
-    setTimeout(() => {
-      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        alert("On some smartphones, automatic download may not work. Please long-press the QR code image and select 'Download' or 'Save Image'.");
-      }
-    }, 500);
   } else {
     alert("Please generate a QR code first.");
   }
